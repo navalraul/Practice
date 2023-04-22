@@ -11,12 +11,43 @@ function Register(event) {
     var ConfirmPassword = document.getElementById("confirmpassword").value;
     // console.log(ConfirmPassword)
 
-    var Ls = JSON.stringify(localStorage.setItem(Users))
+    // var store = {userName:userName,userEmail:userEmail,Password:Password,ConfirmPassword:ConfirmPassword}
+    // console.log(store);
 
-    if (userName && userEmail && Password && ConfirmPassword) {
-        if (Password.length <= 8 == ConfirmPassword <=8) {
+    // localStorage.setItem("Userdata",JSON.stringify(store))
+    // // console.log(store);
+    // for (i=0; i<store.length; i++){
+    //     console.log(store.length[i]);
+    // }
+    
+        if (userName && userEmail && Password && ConfirmPassword) { 
+        if (Password.length >= 8 && ConfirmPassword.length >=8) {
+            // alert("funtion");5
             if (Password == ConfirmPassword){
 
+                var store = JSON.parse (localStorage.getItem("Userdata")) || []
+                var flag = false;
+                for (i = 0; i<store.length; i++) {
+                    if(store[i].useremail == userEmail) {
+                        flag = true;
+                    } 
+                }
+                if (!flag){
+                var Userinfo = {username:userName,useremail:userEmail,password:Password,confirmPassword:ConfirmPassword}
+
+                store.push(Userinfo);
+                localStorage.setItem("Userdata",JSON.stringify(store))
+                alert("Register successful")
+
+                document.getElementById("username").value=""
+                document.getElementById("useremail").value=""
+                document.getElementById("password").value=""
+                document.getElementById("confirmpassword").value=""
+                }
+                else{
+                    alert("Email already exist")
+                }
+                
             }else {
                 console.log("Password matched")
             }
