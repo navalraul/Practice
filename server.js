@@ -11,14 +11,6 @@ function Register(event) {
     var ConfirmPassword = document.getElementById("confirmpassword").value;
     // console.log(ConfirmPassword)
 
-    // var store = {userName:userName,userEmail:userEmail,Password:Password,ConfirmPassword:ConfirmPassword}
-    // console.log(store);
-
-    // localStorage.setItem("Userdata",JSON.stringify(store))
-    // // console.log(store);
-    // for (i=0; i<store.length; i++){
-    //     console.log(store.length[i]);
-    // }
     
         if (userName && userEmail && Password && ConfirmPassword) { 
         if (Password.length >= 8 && ConfirmPassword.length >=8) {
