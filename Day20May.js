@@ -1,26 +1,26 @@
 // let, const, var, hoisting, closure
-function hoisting(){
-    console.log(studentName,"studentName here")
-    var studentName = "Swaraj"
-}
-hoisting();
+// function hoisting(){
+//     console.log(studentName,"studentName here")
+//     var studentName = "Swaraj"
+// }
+// hoisting();
 // var 
 // let
 // const
 
 // Hoisting
 
-var sname;
-var sname = "Naval"
-console.log(sname)
+// var sname;
+// var sname = "Naval"
+// console.log(sname)
 
 // let lname = "let";
 // let lname = "let";
 // console.log(lname)
 
-const cname = "cname";
-cname = "cname";
-console.log(cname);
+// const cname = "cname";
+// cname = "cname";
+// console.log(cname);
 
 
 //         Re-assign                       Hoisting                            Re-declaration
@@ -31,16 +31,27 @@ console.log(cname);
 
 // closure - inner function can access outer function scope - Lexical scoping , its remember the scope
 
-function outerFunction() {
-    var myName = 'Awdiz';
-    console.log(myName)
+// function outerFunction() {
+//     var myName = 'Awdiz';
+//     console.log(myName)
 
-    function innerFunction (){
-        var mySurname= "Institute"
-        console.log(mySurname)
-        console.log(myName)
-    }
-    return innerFunction ();
-}
-var myFunc = outerFunction ; //[function : innerFunction]
-console.log(myFunc())
+//     function innerFunction (){
+//         var mySurname= "Institute"
+//         console.log(mySurname)
+//         console.log(myName)
+//     }
+//     return innerFunction ();
+// }
+// var myFunc = outerFunction ; //[function : innerFunction]
+// console.log(myFunc())
+
+
+let a = 10;
+let b = 4;
+
+console.log("a++",a++)
+console.log("a++",a++)
+console.log("++a",++a)
+console.log("a--",a--)
+console.log("a--",a--)
+console.log("--a",--a)
